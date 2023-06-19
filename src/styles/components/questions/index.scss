@@ -1,0 +1,22 @@
+.questions {
+  margin-bottom: 3em;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5em;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    button {
+      @include breakpoint($bp-md) {
+        width: 100%;
+      }
+    }
+  }
+}
+@import "./accordion.scss";

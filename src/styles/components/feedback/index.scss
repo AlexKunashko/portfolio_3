@@ -1,0 +1,40 @@
+.feedback {
+  margin: 3em 0;
+  &__carousel {
+    background-color: $color-silver;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5vw;
+    padding: 2vw 5vw;
+    text-align: center;
+    .arrow-right {
+      right: -10px;
+    }
+    .arrow-left {
+      left: -10px;
+    }
+    &-item {
+      padding: 3.125em 0;
+      :first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1em;
+        margin-bottom: 0.5em;
+      }
+      p {
+        margin-bottom: 1em;
+      }
+      img {
+        width: 40%;
+        @include breakpoint($bp-lg) {
+          width: 50vw;
+        }
+        @include breakpoint($bp-xs) {
+          width: 70vw;
+        }
+      }
+    }
+  }
+}

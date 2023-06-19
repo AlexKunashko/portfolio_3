@@ -1,0 +1,149 @@
+.coloration {
+  margin: 5em 0 10em 0;
+  &__inner {
+    position: relative;
+    display: none;
+    flex-wrap: wrap;
+    margin: -0.5%;
+    margin-bottom: 2.5em;
+    @include breakpoint($bp-md) {
+      margin: -1%;
+      margin-bottom: 2.5em;
+    }
+
+    div {
+      width: 19%;
+      position: relative;
+      border-radius: 0.6em;
+      margin: 0.5%;
+      overflow: hidden;
+      @include breakpoint($bp-lg) {
+        width: 32.333%;
+      }
+      @include breakpoint($bp-md) {
+        margin: 1%;
+        width: 48%;
+      }
+      @include breakpoint($bp-sm) {
+        margin: 1%;
+      }
+      span {
+        position: absolute;
+        color: $color-white;
+        opacity: 0;
+        white-space: nowrap;
+        font-weight: 500;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        transition: opacity 0.3s ease;
+      }
+      &::before {
+        content: "";
+        display: block;
+        padding-top: 75%;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      img {
+        display: block;
+        position: absolute;
+        border-radius: 0.6em;
+        top: 0;
+        right: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        z-index: 1;
+      }
+
+      &:hover {
+        span {
+          opacity: 1;
+        }
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  & [type="radio"] {
+    display: none;
+  }
+
+  & label {
+    width: auto;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 1.5em;
+    span {
+      color: $color-grey;
+      position: relative;
+      font-size: 1.125em;
+      font-weight: 600;
+      padding: 0.3em 0.8em;
+      position: relative;
+      &::after {
+        content: "";
+        display: none;
+        position: absolute;
+        background: $colro-yellow;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 3px;
+      }
+      &:hover,
+      &:focus {
+        color: $color-dark;
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+  & #tab-btn-dsp:checked ~ #dsp,
+  & #tab-btn-profile:checked ~ #profile {
+    display: flex;
+    & > div {
+      animation: grow 0.4s ease;
+    }
+  }
+  & #tab-btn-dsp:checked ~ .label-tab-btn-dsp,
+  & #tab-btn-profile:checked ~ .label-tab-btn-profile {
+    span {
+      color: $color-dark;
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

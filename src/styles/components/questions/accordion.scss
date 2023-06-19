@@ -1,0 +1,43 @@
+.accordion {
+  width: 55em;
+  @include breakpoint($bp-lg) {
+    width: auto;
+  }
+  .accordion-item {
+    border: none;
+    box-shadow: 0px 15px 30px 0px rgb(0 0 0 / 10%);
+    border-bottom: 2px solid $colro-yellow;
+    margin-bottom: 1.5em;
+    @include breakpoint($bp-lg) {
+      margin-bottom: 0.5em;
+    }
+  }
+  .accordion-button {
+    font-weight: 500;
+    font-size: 20px;
+    @include breakpoint($bp-md) {
+      font-size: 18px;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+    &::after {
+      background-image: url(../assets/image/question/plus.png);
+    }
+    &:not(.collapsed) {
+      color: $color-dark;
+      background-color: $color-white;
+      box-shadow: none;
+      &::after {
+        background-image: url(../assets/image/question/minus.png);
+      }
+    }
+  }
+  p {
+    padding: 0 1em;
+    font-size: 18px;
+    @include breakpoint($bp-md) {
+      font-size: 16px;
+    }
+  }
+}

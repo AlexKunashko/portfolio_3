@@ -1,0 +1,80 @@
+.consultation {
+  margin: 6em 0;
+  &__inner {
+    display: flex;
+    @include breakpoint($bp-md) {
+      flex-direction: column;
+    }
+    &-image {
+      width: 40%;
+      background-color: $color-silver;
+      border-radius: 50px 0px 0px 50px;
+      @include breakpoint($bp-md) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-radius: 50px 50px 0 0;
+      }
+      img {
+        margin: -25px 0px -25px 0px;
+        width: 390px;
+        @include breakpoint($bp-xl) {
+          margin: -25px 0px -25px -20px;
+        }
+        @include breakpoint($bp-lg) {
+          width: 130%;
+          margin: -25px 0px -25px -130px;
+        }
+        @include breakpoint($bp-md) {
+          width: 70%;
+          margin: -100px 0 3em 0;
+        }
+      }
+    }
+    &-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      width: 60%;
+      background-color: transparent;
+      background-image: linear-gradient(90deg, #f3f2f3 70%, #ffffff 100%);
+      border-radius: 0px 100px 100px 0px;
+      padding: 0 10px;
+      margin-right: 8em;
+      @include breakpoint($bp-xxl) {
+        margin-right: 0;
+      }
+      @include breakpoint($bp-md) {
+        width: 100%;
+        align-items: center;
+        padding-bottom: 3em;
+        border-radius: 0 0 50px 50px;
+        background-image: none;
+        background-color: $color-silver;
+      }
+      h3 {
+        font-size: 30px;
+        text-align: left;
+        @include breakpoint($bp-lg) {
+          font-size: 22px;
+        }
+        @include breakpoint($bp-md) {
+          text-align: center;
+        }
+      }
+      p {
+        font-size: 18px;
+        margin-bottom: 1.5em;
+
+        @include breakpoint($bp-md) {
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+      button {
+        max-width: 225px;
+      }
+    }
+  }
+}

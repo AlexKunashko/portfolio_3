@@ -1,0 +1,23 @@
+.our-work {
+  margin: 3em 0;
+  background-image: linear-gradient(
+    90deg,
+    $color-silver 47%,
+    $color-white 100%
+  );
+  &__inner {
+    padding: 4em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-slider {
+      &-item {
+        padding: 2.5em;
+        img {
+          border-radius: 1.875em;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,276 @@
+.estimation {
+  p {
+    text-align: center;
+    font-size: 1.1em;
+  }
+
+  &__inner {
+    margin: 4em 0;
+    margin-top: 3em;
+    max-width: 70%;
+    padding: 1.25em 2.5em;
+    margin-left: 15%;
+    border-radius: 1.875em 1.875em 1.875em 1.875em;
+    box-shadow: 0 0.9375em 3.125em 0 rgb(0 0 0 / 10%);
+
+    @include breakpoint($bp-xxl) {
+      max-width: 80%;
+      margin-left: 10%;
+    }
+
+    @include breakpoint($bp-xl) {
+      max-width: 100%;
+      margin-left: 0;
+    }
+
+    @include breakpoint($bp-md) {
+      padding: 1.25em;
+    }
+
+    &-form {
+      background-color: #ffffff;
+      width: 100%;
+
+      span {
+        margin: 0.3125em;
+        word-wrap: normal;
+        text-align: center;
+      }
+
+      img {
+        margin: 0.625em;
+        margin-bottom: 0.3125em;
+        padding: 0.625em;
+        border: 0.125em solid #aeaeae;
+        border-radius: 1.25em 0 1.25em 1.25em;
+      }
+
+      & label {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      & .label-after-star {
+        margin-bottom: 1em;
+        flex-direction: row;
+        justify-content: center;
+
+        &::after {
+          content: "*";
+          color: red;
+          padding-left: 0.2em;
+        }
+      }
+
+      & .stepn {
+        display: flex;
+        justify-content: space-between;
+        margin: 2em 0;
+
+        span {
+          margin: 1em;
+          font-size: 0.8125em;
+        }
+
+        & .step {
+          height: 2.5em;
+          min-width: 2.5em;
+          min-width: 2.5em;
+          background-color: #f3f2f3;
+          border: 1px solid #7a7a7a;
+          border-radius: 50%;
+          line-height: 2.2;
+        }
+
+        & .active-step {
+          background-color: $colro-yellow;
+          color: $color-dark;
+          border-color: $color-dark;
+        }
+
+        & .back-step {
+          color: $colro-yellow;
+          border-color: $colro-yellow;
+        }
+
+        &-line {
+          width: 100%;
+          height: 1px;
+          margin-top: 1.8em;
+          background-color: #c2cbd2;
+        }
+      }
+
+      & .tab-form {
+        display: none;
+
+        span {
+          font-size: 0.875em;
+        }
+
+        &-inner {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-bottom: 2em;
+
+          @include breakpoint($bp-md) {
+            flex-wrap: wrap;
+          }
+
+          & [type="radio"],
+          & [type="checkbox"] {
+            display: none;
+
+            &:checked+label {
+              img {
+                z-index: 1;
+                cursor: auto;
+                filter: brightness(0.4);
+              }
+
+              div::after {
+                display: block;
+              }
+            }
+          }
+
+          & label div {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &::after {
+              content: "✔";
+              display: none;
+              z-index: 3;
+              font-size: 1.375em;
+              width: 50px;
+              height: 50px;
+              text-align: center;
+
+              position: absolute;
+              top: 50% !important;
+              left: 50% !important;
+              transform: translate(-50%, -50%);
+              background: #ffc12c;
+              padding: 7px;
+              border: 2px solid white;
+              border-radius: 50px;
+            }
+          }
+
+          & [type="checkbox"]+label {
+            div {
+              max-height: 9.0625em;
+              max-width: 7.875em;
+
+              @include breakpoint($bp-md) {
+                max-height: 7.8125em;
+                max-width: 7.8125em;
+              }
+
+              img {
+                max-height: 7.25em;
+                max-width: 7.25em;
+
+                @include breakpoint($bp-md) {
+                  max-height: 6.5625em;
+                  max-width: 6.5625em;
+                }
+              }
+            }
+          }
+
+          & [type="radio"]+label {
+            div {
+              max-height: 10.625em;
+              max-width: 10.625em;
+
+              @include breakpoint($bp-md) {
+                max-height: 7.8125em;
+                max-width: 7.8125em;
+              }
+
+              img {
+                max-height: 9.375em;
+                max-width: 9.375em;
+
+                @include breakpoint($bp-md) {
+                  max-height: 6.5625em;
+                  max-width: 6.5625em;
+                }
+              }
+            }
+          }
+        }
+
+        .invalid {
+          background-color: #ffdddd;
+        }
+      }
+
+      .active {
+        display: block;
+      }
+
+      &-button {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2em;
+
+        & button {
+          background-color: $colro-yellow;
+          color: $color-dark;
+          border: 1px solid $colro-yellow;
+          font-weight: 600;
+          border-radius: 6.25em;
+          min-height: 2.9375em;
+          padding: 0.7375em 1.875em;
+          flex-basis: 100%;
+          max-width: 12.5em;
+          transition: background-color 0.3s ease-out;
+
+          @include breakpoint($bp-xs) {
+            flex-basis: 65%;
+          }
+
+          &:hover {
+            background-color: $color-white;
+          }
+
+          &:first-child {
+            margin-right: auto;
+          }
+        }
+
+        span {
+          @include breakpoint($bp-sm) {
+            display: none;
+          }
+        }
+
+        & #prevBtn {
+          background-color: $color-silver;
+          border-color: $color-silver;
+
+          @include breakpoint($bp-sm) {
+            flex-basis: auto;
+          }
+
+          &:hover {
+            background-color: #dedede;
+            border-color: $colro-yellow;
+          }
+        }
+
+        .nodisplay {
+          display: none;
+        }
+      }
+    }
+  }
+}

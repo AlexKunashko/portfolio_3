@@ -1,0 +1,106 @@
+@import "./fonts";
+@import "./vars";
+@import "./mixins";
+
+$fa-font-path: "assets/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: $color-dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.2em;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+h1 {
+  font-size: 3.75em;
+  text-transform: uppercase;
+  @include breakpoint($bp-lg) {
+    font-size: 2.8125em;
+  }
+  @include breakpoint($bp-md) {
+    font-size: 2em;
+  }
+}
+h2 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  @include breakpoint($bp-md) {
+    font-size: 1.5em;
+  }
+}
+h3 {
+  font-size: 1.5625em;
+  @include breakpoint($bp-lg) {
+    font-size: 1.375em;
+  }
+  @include breakpoint($bp-md) {
+    font-size: 1.25em;
+  }
+}
+h4 {
+  font-size: 1.74em;
+  @include breakpoint($bp-lg) {
+    font-size: 1.125em;
+    margin-bottom: 1em;
+  }
+}
+h5 {
+  font-size: 1.125em;
+  line-height: 1.7em;
+  padding: 0 10em;
+  margin-bottom: 1.5em;
+  @include breakpoint($bp-xl) {
+    padding: 0;
+  }
+  @include breakpoint($bp-md) {
+    font-size: 1em;
+  }
+}
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: $color-dark;
+
+  &:hover {
+    color: inherit;
+  }
+}
+p {
+  b {
+    color: $color-grey;
+  }
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container-xxl {
+  max-width: 1440px;
+}
+[data-modal-order],
+[data-modal-info],
+[data-modal-privacy] {
+  cursor: pointer;
+}
+
+[data-anim] {
+  visibility: hidden;
+}
+@import "./components/index.scss";
